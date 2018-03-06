@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-       String priceMessage = "Free" ;
-       displayMessage(priceMessage);
+        String message = " Item count " + quantity ;
+        displayMessage(message);
     }
     /**
      * This method is called when the order + is clicked.
