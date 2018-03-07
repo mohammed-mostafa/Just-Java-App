@@ -20,6 +20,8 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 2;
+    String drinksOrdered = " 1 mocha ";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        displayPrice(quantity * 5);
+drinksOrdered = drinksOrdered + " , 1 cappucino " ;
+drinksOrdered = drinksOrdered + " , 1 machinto " ;
+displayMessage(drinksOrdered) ;
+
     }
     /**
      * This method is called when the order + is clicked.
