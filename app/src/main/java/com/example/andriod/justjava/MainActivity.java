@@ -28,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    public void submitOrder(View view) {
+
+        int price = calculatePrice();
+        String priceMessage = createOrderSummary(price);
+
+        displayMessage(priceMessage);
+
+    }
+
     /**
      * This method is to calculatePrice.
      *
@@ -38,15 +51,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when the order button is clicked.
+     * This method is to create order summary.
+     *
+     * @ return the order summary
      */
-    public void submitOrder(View view) {
-
-        int price = calculatePrice();
-        String priceMessage = " Total: $ " + price;
-        priceMessage = priceMessage + " \n thank you ";
-        displayMessage(priceMessage);
-
+    private String createOrderSummary(int price) {
+        String orderSummary = "Name: mohammed" + "\nQuantity: " + quantity;
+        orderSummary += "\nTotal $: " + price + " \nThank you";
+        return orderSummary;
     }
 
     /**
