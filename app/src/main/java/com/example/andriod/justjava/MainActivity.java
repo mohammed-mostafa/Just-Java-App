@@ -19,8 +19,7 @@ import android.widget.TextView;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int quantity = 2;
-    String drinksOrdered = " 1 mocha ";
+    int quantity = 0;
 
 
     @Override
@@ -30,30 +29,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This method is to calculatePrice.
+     *
+     * @ return the total price
+     */
+    public int calculatePrice() {
+        return quantity * 5;
+    }
+
+    /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
 
-drinksOrdered = drinksOrdered + " , 1 cappucino " ;
-drinksOrdered = drinksOrdered + " , 1 machinto " ;
-displayMessage(drinksOrdered) ;
+        int price = calculatePrice();
+        String priceMessage = " Total: $ " + price;
+        priceMessage = priceMessage + " \n thank you ";
+        displayMessage(priceMessage);
 
     }
+
     /**
      * This method is called when the order + is clicked.
      */
     public void increment(View view) {
 
-        quantity = quantity + 1 ;
+        quantity = quantity + 1;
         display(quantity);
     }
+
     /**
      * This method is called when the order - is clicked.
      */
     public void decrement(View view) {
-        quantity = quantity - 1 ;
+        quantity = quantity - 1;
         display(quantity);
     }
+
     /**
      * This method displays the given quantity value on the screen.
      */
@@ -70,6 +82,7 @@ displayMessage(drinksOrdered) ;
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
     /**
      * This method displays the given text on the screen.
      */
@@ -77,4 +90,5 @@ displayMessage(drinksOrdered) ;
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
     }
+
 }
