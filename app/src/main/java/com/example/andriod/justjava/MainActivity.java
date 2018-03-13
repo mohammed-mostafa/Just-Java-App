@@ -9,10 +9,10 @@
 package com.example.andriod.justjava;
 
 
-import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 /**
@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
+        CheckBox Add_Wipped_Cream = (CheckBox) findViewById(R.id.whipped_cream);
+        boolean hasWhippedCream = Add_Wipped_Cream.isChecked();
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price);
+        String priceMessage = createOrderSummary(price, hasWhippedCream);
 
         displayMessage(priceMessage);
 
@@ -43,21 +44,25 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is to calculatePrice.
+     * a
      *
      * @ return the total price
      */
     public int calculatePrice() {
+
         return quantity * 5;
     }
+
 
     /**
      * This method is to create order summary.
      *
      * @ return the order summary
      */
-    private String createOrderSummary(int price) {
+    private String createOrderSummary(int price, boolean hasWhippedCream) {
         String orderSummary = "Name: mohammed" + "\nQuantity: " + quantity;
         orderSummary += "\nTotal $: " + price + " \nThank you";
+        orderSummary += "\nNeed Whipped Cream: " + hasWhippedCream;
         return orderSummary;
     }
 
@@ -88,19 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView ordersummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        ordersummaryTextView.setText(message);
     }
 
 }
