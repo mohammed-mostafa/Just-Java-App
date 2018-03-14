@@ -11,8 +11,10 @@ package com.example.andriod.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -38,20 +40,29 @@ public class MainActivity extends AppCompatActivity {
         boolean hasWhippedCream = Add_Wipped_Cream.isChecked();
         CheckBox Add_chocolate = (CheckBox) findViewById(R.id.chocolate);
         boolean haschocolate = Add_chocolate.isChecked();
+        EditText simpleEditText = (EditText) findViewById(R.id.client_name);
+        String AddClientName = simpleEditText.getText().toString();
+        Log.v("MainActivity", "The Name Is:" + AddClientName);
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream, haschocolate);
-
+        String priceMessage = createOrderSummary(price, hasWhippedCream, haschocolate, AddClientName);
         displayMessage(priceMessage);
+        boolean isRaining = false;
+        Log.v("WeatherActivity", "Thank you for using the WhetherWeather App.");
+        if (isRaining) {
+            Log.v("WeatherActivity", "It's raining, better bring an umbrella.");
+        } else {
+            Log.v("WeatherActivity", "It's unlikely to rain.");
+        }
 
     }
 
     /**
      * This method is to calculatePrice.
-     * a
      *
      * @ return the total price
      */
     public int calculatePrice() {
+
 
         return quantity * 5;
     }
@@ -62,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
      *
      * @ return the order summary
      */
-    private String createOrderSummary(int price, boolean hasWhippedCream, boolean haschocolate) {
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean haschocolate, String AddClientName) {
 
-        String orderSummary = "Name: mohammed" + "\nQuantity: " + quantity;
+        String orderSummary = "Name: " + AddClientName + "\nQuantity: " + quantity;
         orderSummary += "\nNeed Whipped Cream: " + hasWhippedCream;
         orderSummary += "\nNeed Chocolate: " + haschocolate;
         orderSummary += "\nTotal $: " + price + " \nThank you";
