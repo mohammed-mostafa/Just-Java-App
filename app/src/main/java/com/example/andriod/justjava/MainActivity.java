@@ -9,6 +9,8 @@
 package com.example.andriod.justjava;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -46,7 +48,16 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity", "The Name Is:" + AddClientName);
         int price = calculatePrice(hasWhippedCream, haschocolate);
         String priceMessage = createOrderSummary(price, hasWhippedCream, haschocolate, AddClientName);
-        displayMessage(priceMessage);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, "mohammed.mostufa@yahoo.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "just_java_order" + AddClientName );
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+            displayMessage(priceMessage);
+
+        }
 
     }
 
