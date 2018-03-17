@@ -20,37 +20,29 @@
             android:inputType="textCapWords" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+            style="@style/TextStyle"
             android:layout_margin="8dp"
-            android:text="@string/Topping"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black" />
+            android:text="@string/Topping" />
 
         <CheckBox
             android:id="@+id/whipped_cream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle"
             android:paddingLeft="24dp"
-            android:text="Whipped cream"
-            android:textSize="16sp" />
+            android:text="Whipped cream" />
 
         <CheckBox
             android:id="@+id/chocolate"
-            android:layout_width="wrap_content"
+            style="@style/TextStyle"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Chocolate"
-            android:textSize="16sp" />
+            android:text="Chocolate" />
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle"
             android:layout_margin="8dp"
-            android:text="quantity"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black" />
+            android:text="quantity" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -59,43 +51,33 @@
 
             <Button
                 android:id="@+id/decrement"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                style="@style/TextStyle"
                 android:layout_margin="8dp"
                 android:onClick="decrement"
-                android:text="-"
-                android:textColor="@android:color/black" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextStyle"
                 android:layout_margin="8dp"
-                android:text="0"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:text="0" />
 
             <Button
                 android:id="@+id/increment_id"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                style="@style/TextStyle"
                 android:layout_margin="8dp"
                 android:onClick="increment"
-                android:text="+"
-                android:textColor="@android:color/black" />
+                android:text="+" />
 
         </LinearLayout>
 
 
         <Button
             android:id="@+id/button_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle"
             android:layout_margin="8dp"
             android:onClick="submitOrder"
-            android:text="ORDER"
-            android:textColor="@android:color/black" />
+            android:text="ORDER" />
 
     </LinearLayout>
 </ScrollView>
