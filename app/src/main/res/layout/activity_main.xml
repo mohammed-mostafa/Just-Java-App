@@ -16,14 +16,14 @@
             android:id="@+id/client_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Client Name"
+            android:hint="@string/Client_Name"
             android:inputType="textCapWords" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="topping"
+            android:text="@string/Topping"
             android:textAllCaps="true"
             android:textColor="@android:color/black" />
 

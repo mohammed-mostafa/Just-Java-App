@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق جافا</string>
+    <string name="name">الاسم</string>
+    <string name="Quantity">الكمية</string>
+    <string name="Whipped_Cream">اضافة كريمة</string>
+    <string name="Chocolate">اضافة شيكولات</string>
+    <string name="Total">الاجمالى</string>
+    <string name="Thank_you">شكرا</string>
+    <string name="Client_Name">اسم المستخدم</string>
+    <string name="Topping">الاضافات</string>
+</resources>
